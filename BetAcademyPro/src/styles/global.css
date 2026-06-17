@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg: #0f172a;
-  --bg-2: #1e293b;
-  --panel: #1e293b;
-  --panel-solid: #1e293b;
-  --line: #334155;
-  --line-strong: #475569;
-  --text: #f8fafc;
-  --muted: #94a3b8;
-  --accent: #22c55e;
-  --accent-2: #f59e0b;
+  --bg: #0b111e;
+  --bg-2: #151e2e;
+  --panel: #151e2e;
+  --panel-solid: #151e2e;
+  --line: #222f46;
+  --line-strong: #2d3e5c;
+  --text: #ffffff;
+  --muted: #8a9cb4;
+  --accent: #ff7a00;
+  --accent-2: #3cd13c;
   --danger: #ef4444;
-  --positive: #34d399;
-  --warning: #fbbf24;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --radius: 12px;
+  --positive: #3cd13c;
+  --warning: #ffb800;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --radius: 6px;
 }
 
 * { box-sizing: border-box; }
@@ -583,21 +583,32 @@ form { display: grid; gap: 16px; }
   gap: 10px;
 }
 .odd-button {
-  min-height: 68px;
-  padding: 10px;
-  background: rgba(255,255,255,.06);
+  min-height: 54px;
+  padding: 8px 12px;
+  background-color: #1a2436;
   border: 1px solid var(--line);
   color: white;
-  display: grid;
-  gap: 6px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
 }
-.odd-button span { color: var(--muted); font-size: 12px; }
-.odd-button strong { font-size: 19px; color: var(--accent); }
-.odd-button:hover, .odd-button.selected {
-  transform: translateY(-2px);
-  background: rgba(34,197,94,.16);
-  border-color: rgba(34,197,94,.36);
+.odd-button span { color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+.odd-button strong { font-size: 16px; color: var(--accent); }
+.odd-button:hover {
+  background-color: #24324a;
+  border-color: var(--accent);
+}
+.odd-button.selected {
+  background-color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #000000 !important;
+}
+.odd-button.selected span,
+.odd-button.selected strong {
+  color: #000000 !important;
 }
 .event-card.compact .event-meta { margin-bottom: 0; }
 .bet-slip {
@@ -878,19 +889,26 @@ form { display: grid; gap: 16px; }
   gap: 10px;
 }
 .market-odds button {
-  min-height: 64px;
-  border: 1px solid rgba(34,197,94,.22);
-  border-radius: 16px;
-  background: rgba(34,197,94,.10);
+  min-height: 50px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: #1a2436;
   color: white;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 4px;
-  text-align: left;
-  padding: 11px 12px;
-  font-weight: 900;
+  padding: 8px 12px;
+  font-weight: 700;
+  transition: all 0.2s ease;
 }
-.market-odds button span { color: #cbd5e1; font-size: 12px; }
-.market-odds button strong { color: #86efac; font-size: 20px; }
+.market-odds button span { color: var(--muted); font-size: 11px; text-transform: uppercase; }
+.market-odds button strong { color: var(--accent); font-size: 15px; }
+.market-odds button:hover {
+  background-color: #24324a;
+  border-color: var(--accent);
+}
 .live-feed {
   display: grid;
   gap: 10px;
@@ -906,20 +924,20 @@ form { display: grid; gap: 16px; }
   justify-content: space-between;
   gap: 12px;
   border: 1px solid var(--line);
-  border-radius: 17px;
-  padding: 13px;
-  background: rgba(2,6,23,.35);
+  border-radius: var(--radius);
+  padding: 12px;
+  background-color: rgba(2, 6, 23, 0.2);
 }
 .feed-match strong { display: block; margin-top: 4px; }
 .feed-odd {
   min-width: 74px;
   text-align: center;
-  border-radius: 14px;
-  padding: 9px;
-  background: rgba(245,158,11,.12);
-  border: 1px solid rgba(245,158,11,.18);
+  border-radius: var(--radius);
+  padding: 8px;
+  background-color: rgba(255, 122, 0, 0.1);
+  border: 1px solid rgba(255, 122, 0, 0.2);
 }
-.feed-odd strong { color: var(--accent-2); }
+.feed-odd strong { color: var(--accent); }
 .sports-grid div {
   background: rgba(2,6,23,.30);
 }
