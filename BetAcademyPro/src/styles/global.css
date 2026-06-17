@@ -275,12 +275,19 @@ form { display: grid; gap: 16px; }
 .form-error, .form-message {
   border-radius: 6px;
   padding: 14px 16px;
-  background: rgba(248,81,73,.12);
-  color: #fca5a5;
-  border: 1px solid rgba(248,81,73,.2);
   font-weight: 700;
+  font-size: 14px;
 }
-.form-message { background: rgba(34,197,94,.10); color: #bbf7d0; border-color: rgba(34,197,94,.22); }
+.form-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+.form-message {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
 
 .public-page {
   min-height: 100vh;
@@ -1092,12 +1099,19 @@ form { display: grid; gap: 16px; }
   border-radius: 6px;
   background: var(--bg);
   border: 1px solid var(--line);
+  color: var(--text);
 }
 .market-teams div:last-child { text-align: right; }
 .market-teams small,
 .feed-match span,
 .feed-odd small { color: var(--muted); font-weight: 800; }
-.market-teams strong { display: block; margin-top: 6px; font-size: 28px; letter-spacing: -1px; }
+.market-teams strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 28px;
+  letter-spacing: -1px;
+  color: var(--text);
+}
 .versus {
   width: 42px;
   height: 42px;
@@ -1152,8 +1166,13 @@ form { display: grid; gap: 16px; }
   border-radius: var(--radius);
   padding: 12px;
   background-color: var(--bg);
+  color: var(--text);
 }
-.feed-match strong { display: block; margin-top: 4px; }
+.feed-match strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--text);
+}
 .feed-odd {
   min-width: 74px;
   text-align: center;
