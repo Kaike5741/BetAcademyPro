@@ -24,7 +24,7 @@ export default function Login() {
 
     try {
       const usuario = await login(email, senha)
-      navigate(usuario.perfil === 'admin' ? '/admin' : '/app')
+      navigate(usuario.perfil === 'admin' ? '/admin/eventos' : '/app/eventos')
     } catch (err) {
       setError(err.message || 'Não foi possível entrar.')
     } finally {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
-import { FaChartLine, FaClipboardList, FaHistory, FaHome, FaMedal, FaPlusCircle, FaShieldAlt, FaSignOutAlt, FaTrophy, FaWallet, FaBars, FaTimes, FaCoins } from 'react-icons/fa'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import { FaChartLine, FaClipboardList, FaHistory, FaHome, FaMedal, FaPlusCircle, FaShieldAlt, FaSignOutAlt, FaTrophy, FaWallet, FaBars, FaTimes, FaCoins, FaUser } from 'react-icons/fa'
 import { useAuth } from '../context/AuthContext'
 import { formatCurrency } from '../services/api'
 
@@ -11,14 +11,14 @@ export default function Sidebar() {
   const location = useLocation()
 
   const adminLinks = [
-    { to: '/admin', label: 'Painel', icon: <FaHome /> },
     { to: '/admin/eventos', label: 'Eventos', icon: <FaPlusCircle /> },
+    { to: '/admin/painel', label: 'Painel', icon: <FaHome /> },
     { to: '/admin/ranking', label: 'Ranking', icon: <FaTrophy /> }
   ]
 
   const userLinks = [
-    { to: '/app', label: 'Início', icon: <FaHome /> },
     { to: '/app/eventos', label: 'Eventos', icon: <FaClipboardList /> },
+    { to: '/app/perfil', label: 'Perfil', icon: <FaUser /> },
     { to: '/app/historico', label: 'Histórico', icon: <FaHistory /> },
     { to: '/app/carteira', label: 'Carteira', icon: <FaWallet /> },
     { to: '/app/ranking', label: 'Ranking', icon: <FaChartLine /> },
@@ -33,11 +33,11 @@ export default function Sidebar() {
     <>
       <nav className="navbar">
         <div className="navbar-left">
-          <div className="brand-logo">
+          <Link to={isAdmin ? "/admin/eventos" : "/app/eventos"} className="brand-logo">
             <span className="logo-accent">Bet</span>
             <span className="logo-text">Academy</span>
             <span className="logo-sub">Pro</span>
-          </div>
+          </Link>
         </div>
 
         <div className="nav-links-desktop">
@@ -72,11 +72,11 @@ export default function Sidebar() {
       <div className={`drawer-overlay ${drawerOpen ? 'open' : ''}`} onClick={closeDrawer} />
       <aside className={`mobile-drawer ${drawerOpen ? 'open' : ''}`}>
         <div className="drawer-header">
-          <div className="brand-logo">
+          <Link to={isAdmin ? "/admin/eventos" : "/app/eventos"} className="brand-logo" onClick={closeDrawer}>
             <span className="logo-accent">Bet</span>
             <span className="logo-text">Academy</span>
             <span className="logo-sub">Pro</span>
-          </div>
+          </Link>
           <button className="close-drawer" onClick={closeDrawer} aria-label="Fechar menu">
             <FaTimes />
           </button>
