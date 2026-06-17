@@ -36,9 +36,19 @@ export default function Historico() {
 
       <div className="filter-bar">
         <FaSearch />
-        {['todos', 'pendente', 'ganhou', 'perdeu'].map((item) => (
-          <button key={item} onClick={() => setFilter(item)} className={filter === item ? 'active' : ''}>{item}</button>
-        ))}
+        {['todos', 'pendente', 'ganhou', 'perdeu'].map((item) => {
+          const labels = {
+            todos: 'Todos',
+            pendente: 'Pendentes',
+            ganhou: 'Ganhas',
+            perdeu: 'Perdidas'
+          }
+          return (
+            <button key={item} onClick={() => setFilter(item)} className={filter === item ? 'active' : ''}>
+              {labels[item]}
+            </button>
+          )
+        })}
       </div>
 
       {!filtered.length ? <EmptyState title="Nenhuma aposta encontrada" /> : (

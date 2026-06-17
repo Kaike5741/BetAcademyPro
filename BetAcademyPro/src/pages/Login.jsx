@@ -24,7 +24,7 @@ export default function Login() {
 
     try {
       const usuario = await login(email, senha)
-      navigate(usuario.perfil === 'admin' ? '/admin' : '/app')
+      navigate(usuario.perfil === 'admin' ? '/admin/eventos' : '/app/eventos')
     } catch (err) {
       setError(err.message || 'Não foi possível entrar.')
     } finally {
@@ -45,12 +45,10 @@ export default function Login() {
   return (
     <main className="login-page">
       <section className="login-hero sportsbook-hero">
-        <div className="brand large">
-          <div className="brand-icon"><FaShieldAlt /></div>
-          <div>
-            <strong>BetAcademy Pro</strong>
-            <span>Arena esportiva digital</span>
-          </div>
+        <div className="brand-logo large">
+          <span className="logo-accent">Bet</span>
+          <span className="logo-text">Academy</span>
+          <span className="logo-sub">Pro</span>
         </div>
 
         <div className="hero-copy">

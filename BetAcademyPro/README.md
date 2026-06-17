@@ -223,47 +223,21 @@ src/
 
 ---
 
-## Divisão de tarefas sugerida para dupla
+## Equipe e Divisão de Tarefas
 
-### Integrante 1
-
-- Estrutura inicial do projeto.
-- Rotas protegidas.
-- Context API de autenticação.
-- Tela de login.
-- Layout geral, sidebar e topbar.
-- Dashboard do usuário.
-
-### Integrante 2
-
-- JSON Server e arquivo `db.json`.
-- CRUD de eventos do administrador.
-- Tela de apostas.
-- Atualização de saldo e histórico.
-- Carteira, extrato e bônus.
-- README e ajustes finais.
-
----
-
-## Commits sugeridos
-
-```txt
-Criação da estrutura inicial do projeto React com Vite
-Configuração do JSON Server e dados fictícios
-Implementação da tela de login simulado
-Criação das rotas protegidas por perfil
-Implementação do layout profissional com sidebar
-Criação do painel administrativo
-Implementação do cadastro e gerenciamento de eventos
-Criação da tela de eventos disponíveis
-Implementação da aposta fictícia e controle de saldo
-Criação do histórico de apostas
-Implementação da carteira e extrato fictício
-Criação do ranking e conquistas
-Finalização do README e ajustes responsivos
-```
-
----
+- **Luis Felipe**
+  - Estrutura inicial do projeto React com Vite
+  - Rotas e navegação protegida por perfil (Admin vs Usuário)
+  - Context API de autenticação e persistência de sessão
+  - Interface visual, sidebar, topbar e layouts responsivos
+  - Dashboard do jogador e visualização de indicadores de desempenho
+  
+- **Kaike Santos**
+  - Configuração do JSON Server e definição do banco de dados fictício (`db.json`)
+  - CRUD e gerenciamento operacional de eventos pelo administrador
+  - Bilhete de aposta dinâmico com cálculo em tempo real de retorno potencial
+  - Atualização automática de saldos fictícios, XP e controle do histórico de apostas
+  - Sistema de gamificação, conquistas de XP e extrato de transações
 
 ## Dificuldades encontradas
 

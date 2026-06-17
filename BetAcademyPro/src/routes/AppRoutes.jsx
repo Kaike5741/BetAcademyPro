@@ -23,7 +23,8 @@ export default function AppRoutes() {
 
         <Route element={<ProtectedRoute allowedProfiles={["admin"]} />}>
           <Route element={<AppShell />}>
-            <Route path="/admin" element={<DashboardAdmin />} />
+            <Route path="/admin" element={<Navigate to="/admin/eventos" replace />} />
+            <Route path="/admin/painel" element={<DashboardAdmin />} />
             <Route path="/admin/eventos" element={<EventosAdmin />} />
             <Route path="/admin/ranking" element={<Ranking />} />
           </Route>
@@ -31,7 +32,8 @@ export default function AppRoutes() {
 
         <Route element={<ProtectedRoute allowedProfiles={["usuario"]} />}>
           <Route element={<AppShell />}>
-            <Route path="/app" element={<DashboardUser />} />
+            <Route path="/app" element={<Navigate to="/app/eventos" replace />} />
+            <Route path="/app/perfil" element={<DashboardUser />} />
             <Route path="/app/eventos" element={<Eventos />} />
             <Route path="/app/historico" element={<Historico />} />
             <Route path="/app/carteira" element={<Carteira />} />
