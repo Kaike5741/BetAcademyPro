@@ -71,11 +71,17 @@ export default function DashboardAdmin() {
           <div className="chart-box">
             <ResponsiveContainer width="100%" height={280}>
               <BarChart data={chartData}>
+                <defs>
+                  <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="var(--accent-2)" stopOpacity={0.9}/>
+                    <stop offset="95%" stopColor="var(--accent)" stopOpacity={0.6}/>
+                  </linearGradient>
+                </defs>
                 <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
                 <XAxis dataKey="name" stroke="rgba(255,255,255,.65)" />
                 <YAxis stroke="rgba(255,255,255,.65)" allowDecimals={false} />
                 <Tooltip contentStyle={{ background: '#111827', border: '1px solid rgba(255,255,255,.12)', borderRadius: 12 }} />
-                <Bar dataKey="total" radius={[10, 10, 0, 0]} />
+                <Bar dataKey="total" fill="url(#colorTotal)" radius={[10, 10, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
