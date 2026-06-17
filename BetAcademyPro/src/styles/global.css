@@ -708,7 +708,22 @@ form { display: grid; gap: 16px; }
   border: 1px solid var(--line);
 }
 .filter-bar svg { color: var(--accent); }
-.filter-bar button { padding: 0 14px; color: white; }
+.filter-bar button {
+  padding: 0 14px;
+  color: var(--text);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+}
+.filter-bar button:hover {
+  background: rgba(244,91,0,.08);
+  border-color: var(--accent);
+  color: var(--text);
+}
+.filter-bar button.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
 .events-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -944,8 +959,8 @@ form { display: grid; gap: 16px; }
 }
 .event-insights span {
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.045);
-  color: #cbd5e1;
+  background: var(--bg);
+  color: var(--muted);
   border-radius: 6px;
   padding: 10px 12px;
   font-size: 12px;
@@ -964,13 +979,13 @@ form { display: grid; gap: 16px; }
   flex: 1;
   border-radius: 6px;
   border: 1px solid var(--line);
-  background: rgba(2,6,23,.56);
+  background: var(--bg-2);
   color: var(--text);
   padding: 0 14px;
   outline: none;
   font-weight: 700;
 }
-.search-input::placeholder { color: #64748b; }
+.search-input::placeholder { color: var(--muted); }
 
 /* Tela inicial com aparência de plataforma esportiva */
 .sportsbook-hero {
