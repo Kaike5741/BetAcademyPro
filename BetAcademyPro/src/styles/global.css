@@ -447,8 +447,8 @@ form { display: grid; gap: 16px; }
   place-items: center;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: rgba(255,255,255,.06);
-  color: white;
+  background: var(--bg);
+  color: var(--text);
   font-size: 16px;
   cursor: pointer;
 }
@@ -458,7 +458,7 @@ form { display: grid; gap: 16px; }
   gap: 12px;
   padding: 16px;
   border-radius: 8px;
-  background: rgba(255,255,255,.05);
+  background: var(--bg);
   border: 1px solid var(--line);
   margin-bottom: 14px;
 }
@@ -489,16 +489,16 @@ form { display: grid; gap: 16px; }
   gap: 12px;
   padding: 14px;
   border-radius: 6px;
-  color: #cbd5e1;
+  color: var(--text);
   font-weight: 700;
   border: 1px solid transparent;
   transition: .15s ease;
 }
 .drawer-nav a:hover,
 .drawer-nav a.active {
-  color: white;
-  background: rgba(255,122,0,.12);
-  border-color: rgba(255,122,0,.2);
+  color: var(--accent);
+  background: rgba(244,91,0,.08);
+  border-color: rgba(244,91,0,.15);
 }
 
 .drawer-footer { margin-top: auto; display: grid; gap: 12px; padding-top: 18px; }
@@ -579,15 +579,16 @@ form { display: grid; gap: 16px; }
   overflow: hidden;
   border-radius: var(--radius);
   padding: 32px;
-  border: 1px solid var(--line);
-  background-color: var(--panel);
+  background: linear-gradient(135deg, #131b26 0%, #1e293b 100%);
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   gap: 20px;
   align-items: center;
   box-shadow: var(--shadow);
+  border: none;
 }
-.hero-banner h1 { margin: 8px 0 12px; font-size: clamp(28px, 4vw, 48px); line-height: 1.05; letter-spacing: -2px; max-width: 820px; }
+.hero-banner h1 { margin: 8px 0 12px; font-size: clamp(28px, 4vw, 48px); line-height: 1.05; letter-spacing: -2px; max-width: 820px; color: #ffffff; }
 .hero-banner p { color: #cbd5e1; max-width: 720px; line-height: 1.65; margin: 0; }
 .hero-symbol { font-size: 88px; opacity: .12; }
 .stats-grid {
@@ -650,9 +651,9 @@ form { display: grid; gap: 16px; }
   font-weight: 900;
   border: 1px solid var(--line);
 }
-.status-badge.aberto, .status-badge.ganhou { color: #bbf7d0; background: rgba(34,197,94,.12); border-color: rgba(34,197,94,.22); }
-.status-badge.encerrado, .status-badge.perdeu { color: #fecaca; background: rgba(239,68,68,.12); border-color: rgba(239,68,68,.22); }
-.status-badge.pendente { color: #fde68a; background: rgba(245,158,11,.12); border-color: rgba(245,158,11,.22); }
+.status-badge.aberto, .status-badge.ganhou { color: #0f8b3f; background: rgba(15,139,63,.10); border-color: rgba(15,139,63,.18); }
+.status-badge.encerrado, .status-badge.perdeu { color: #dc2626; background: rgba(220,38,38,.10); border-color: rgba(220,38,38,.18); }
+.status-badge.pendente { color: #d97706; background: rgba(217,119,6,.10); border-color: rgba(217,119,6,.18); }
 
 .event-form {
   display: grid;
@@ -973,17 +974,38 @@ form { display: grid; gap: 16px; }
 
 /* Tela inicial com aparência de plataforma esportiva */
 .sportsbook-hero {
-  background-color: var(--panel);
+  background: linear-gradient(135deg, #131b26 0%, #1c2635 100%);
+  color: #ffffff;
+  border-radius: var(--radius);
+  padding: 42px;
 }
 .sportsbook-hero::before {
   display: none;
 }
 .sportsbook-hero .brand,
+.sportsbook-hero .brand-logo,
 .sportsbook-hero .hero-copy,
 .sportsbook-hero .sports-showcase,
 .sportsbook-hero .hero-grid {
   position: relative;
   z-index: 2;
+}
+.sportsbook-hero .brand-logo .logo-text {
+  color: #ffffff;
+}
+.sportsbook-hero h1 {
+  color: #ffffff;
+}
+.sportsbook-hero p {
+  color: #cbd5e1;
+}
+.sportsbook-hero .hero-grid div {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+.sportsbook-hero .hero-grid div span {
+  color: #cbd5e1;
 }
 .sports-showcase {
   display: grid;
@@ -1006,17 +1028,33 @@ form { display: grid; gap: 16px; }
 .featured-market::after {
   display: none;
 }
-.market-topline,
+.market-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--accent-2);
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .9px;
+}
 .feed-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  color: #bbf7d0;
+  color: var(--text);
   font-weight: 900;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .9px;
+}
+.sportsbook-hero .market-topline {
+  color: #86efac;
+}
+.sportsbook-hero .feed-title {
+  color: #ffffff;
 }
 .market-topline span,
 .feed-title {
