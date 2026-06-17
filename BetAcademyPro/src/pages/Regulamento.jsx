@@ -5,12 +5,10 @@ export default function Regulamento() {
   return (
     <main className="public-page">
       <div className="public-card">
-        <div className="brand">
-          <div className="brand-icon"><FaShieldAlt /></div>
-          <div>
-            <strong>BetAcademy Pro</strong>
-            <span>Regulamento</span>
-          </div>
+        <div className="brand-logo" style={{ marginBottom: 20 }}>
+          <span className="logo-accent">Bet</span>
+          <span className="logo-text">Academy</span>
+          <span className="logo-sub">Pro</span>
         </div>
         <h1>Regras da plataforma</h1>
         <p>

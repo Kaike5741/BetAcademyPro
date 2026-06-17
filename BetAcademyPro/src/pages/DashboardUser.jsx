@@ -73,9 +73,9 @@ export default function DashboardUser() {
                       <stop offset="95%" stopColor="var(--accent)" stopOpacity={0.0}/>
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="name" stroke="rgba(255,255,255,.65)" />
-                  <YAxis stroke="rgba(255,255,255,.65)" />
-                  <Tooltip contentStyle={{ background: '#111827', border: '1px solid rgba(255,255,255,.12)', borderRadius: 12 }} />
+                  <XAxis dataKey="name" stroke="var(--muted)" />
+                  <YAxis stroke="var(--muted)" />
+                  <Tooltip contentStyle={{ background: 'var(--panel)', border: '1px solid var(--line)', borderRadius: 8, color: 'var(--text)' }} />
                   <Area type="monotone" dataKey="valor" stroke="var(--accent)" fill="url(#colorValor)" strokeWidth={3} />
                 </AreaChart>
               </ResponsiveContainer>

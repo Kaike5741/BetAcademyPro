@@ -77,11 +77,11 @@ export default function DashboardAdmin() {
                     <stop offset="95%" stopColor="var(--accent)" stopOpacity={0.6}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" opacity={0.15} />
-                <XAxis dataKey="name" stroke="rgba(255,255,255,.65)" />
-                <YAxis stroke="rgba(255,255,255,.65)" allowDecimals={false} />
-                <Tooltip contentStyle={{ background: '#111827', border: '1px solid rgba(255,255,255,.12)', borderRadius: 12 }} />
-                <Bar dataKey="total" fill="url(#colorTotal)" radius={[10, 10, 0, 0]} />
+                <CartesianGrid strokeDasharray="3 3" opacity={0.15} stroke="var(--line)" />
+                <XAxis dataKey="name" stroke="var(--muted)" />
+                <YAxis stroke="var(--muted)" allowDecimals={false} />
+                <Tooltip contentStyle={{ background: 'var(--panel)', border: '1px solid var(--line)', borderRadius: 8, color: 'var(--text)' }} />
+                <Bar dataKey="total" fill="url(#colorTotal)" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
